@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TowerPlace : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler
+public class TowerPlace : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler//, IDragHandler
 {
     [SerializeField] Color normal;
     [SerializeField] Color onMouse;
 
-    private Renderer renderer;
+    private Renderer ren;
 
     private void Awake()
     {
-        renderer = GetComponent<Renderer>();
+        ren = GetComponent<Renderer>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -29,16 +29,16 @@ public class TowerPlace : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        renderer.material.color = onMouse;
+        ren.material.color = onMouse;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        renderer.material.color = normal;
+        ren.material.color = normal;
     }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
+    //public void OnDrag(PointerEventData eventData)
+    //{
+    //    throw new System.NotImplementedException();
+    //}
 }
