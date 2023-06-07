@@ -10,6 +10,14 @@ public class SettingSceneUI : SceneUI
 
         buttons["InfoButton"].onClick.AddListener(() => { Debug.Log("Info"); });
         buttons["VolumeButton"].onClick.AddListener(() => { Debug.Log("Volume"); });
-        buttons["SettingButton"].onClick.AddListener(() => { Debug.Log("Setting"); });
+        buttons["SettingButton"].onClick.AddListener(() => { OpenPausePopUpUI(); });
+    }
+
+    public void OpenPausePopUpUI()
+    {
+        //PopUpUI ui = GameManager.Resource.Load<PopUpUI>("UI/Image");
+        //GameManager.UI.ShowPopUpUI(ui);
+
+        GameManager.UI.ShowPopUpUI("UI/SettingPopUpUI");
     }
 }

@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void InitManagers()
     {
-        GameObject resourceObj = new GameObject();
+        GameObject resourceObj = new GameObject();              // ResouceManager는 가장 먼저 해주기
         resourceObj.name = "ResourceManager";
         resourceObj.transform.parent = transform;
         resource = resourceObj.AddComponent<ResourceManager>();
