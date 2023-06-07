@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+// UI 바인딩을 하여 UI관리
+
 public class BaseUI : MonoBehaviour
 {
     protected Dictionary<string, RectTransform> transforms;
