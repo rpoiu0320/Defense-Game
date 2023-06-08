@@ -18,8 +18,8 @@ public class BuildInGameUI : InGameUI
 
     public void BuildArchorTower()
     {
-        TowerData archorTowerData = GameManager.Resource.Load<TowerData>("Data/ArchorTowerData");
-        towerPlace.BuildTower(archorTowerData);
+        TowerData archerTowerData = GameManager.Resource.Load<TowerData>("Data/ArcherTowerData");
+        towerPlace.BuildTower(archerTowerData);
         GameManager.UI.CloseInGameUI(this);
     }
 

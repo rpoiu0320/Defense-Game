@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11c5fada8427b74d86d70397580c8d3, type: 3}
   m_Name: TowerData
   m_EditorClassIdentifier: 
-  towers: []
+  towers:
+  - name: ArcherTower
+    description: ArcherTowerBuild
+    tower: {fileID: 139378926956654939, guid: d0ec460f4f7f5934e994454a30286d50, type: 3}
+    buildTime: 10
+    buildCost: 10
+    sellCost: 5
+  - name: CanonTower
+    description: CanonTowerBuild
+    tower: {fileID: -1718684872855263074, guid: 4eec490fbe2a09e488b50f2c14028c3b, type: 3}
+    buildTime: 20
+    buildCost: 20
+    sellCost: 10
