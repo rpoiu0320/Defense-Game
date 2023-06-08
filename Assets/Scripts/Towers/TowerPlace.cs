@@ -27,9 +27,9 @@ public class TowerPlace : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         //}
 
         BuildInGameUI buildUI = GameManager.UI.ShowInGameUI<BuildInGameUI>("UI/BuildInGameUI");
-        //buildUI.SetTowerPlace(this);
-        //buildUI.SetTarget(transform);
-        //buildUI.SetOffset(new Vector3(200, 0));
+        buildUI.SetTowerPlace(this);
+        buildUI.SetTarget(transform);
+        buildUI.SetOffset(new Vector3(0, 100));
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -40,6 +40,12 @@ public class TowerPlace : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     public void OnPointerExit(PointerEventData eventData)
     {
         ren.material.color = normal;
+    }
+
+    public void BuildTower(TowerData data)
+    {
+        GameManager.Resource.Destroy(gameObject);
+        GameManager.Resource.Instantiate(data./*Towers[0].*/tower, transform.position, transform.rotation);
     }
 
     //public void OnDrag(PointerEventData eventData)

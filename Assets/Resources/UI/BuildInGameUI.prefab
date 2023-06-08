@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9197841889818984639}
   - component: {fileID: 4174585698595240696}
   m_Layer: 5
-  m_Name: BowButton
+  m_Name: ArchorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 7250019418885709820}
   - component: {fileID: 1200506508360256702}
   m_Layer: 5
-  m_Name: Bloker
+  m_Name: Blocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 0}
-  followOffset: {x: 0, y: 100}
+  followOffset: {x: 0, y: 0}
 --- !u!1 &5079200101955694141
 GameObject:
   m_ObjectHideFlags: 0

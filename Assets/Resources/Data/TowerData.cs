@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerData : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+[CreateAssetMenu (fileName = "TowerData", menuName = "Data/Tower")] // 우클릭하여 생성할 때 매뉴에 추가되는걸 알 수 있음
+public class TowerData : ScriptableObject//, ISerializationCallbackReceiver
+{                     // 데이터 저장소로 사용
+                      //public TowerInfo[] Towers;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //public void OnAfterDeserialize()
+    //{
+    //    //tower = Towers;
+    //}
+
+    //public void OnBeforeSerialize()
+    //{
+
+    //}
+
+    [SerializeField] public Tower tower;
 }

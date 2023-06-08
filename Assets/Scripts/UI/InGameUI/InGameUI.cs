@@ -15,7 +15,7 @@ public class InGameUI : BaseUI
         }
     }
 
-    public void SetTarGet(Transform target)
+    public void SetTarget(Transform target)
     {
         this.followTarget = target;
         if (followTarget != null)
