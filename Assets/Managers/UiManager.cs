@@ -20,21 +20,22 @@ public class UIManager : MonoBehaviour
     {
         eventSystem = GameManager.Resource.Instantiate<EventSystem>("UI/EventSystem");
         eventSystem.transform.parent = transform;
-        eventSystem.name = "EventSystem";
+        eventSystem.gameObject.name = "EventSystem";
 
         popUpCanvas = GameManager.Resource.Instantiate<Canvas>("UI/Canvas");
-        popUpCanvas.name = "PopUpCanvas";
+        popUpCanvas.gameObject.name = "PopUpCanvas";
         popUpCanvas.sortingOrder = 100;
-
         popUpStack = new Stack<PopUpUI>();
 
         windowCanvas = GameManager.Resource.Instantiate<Canvas>("UI/Canvas");
-        windowCanvas.name = "WindowCanvas";
+        windowCanvas.gameObject.name = "WindowCanvas";
         windowCanvas.sortingOrder = 10;
 
+        // gameSceneCavas.SortingOrder = 1;
+
         inGameCanvas = GameManager.Resource.Instantiate<Canvas>("UI/Canvas");
-        inGameCanvas.name = "InGameCanvas";
-        inGameCanvas.sortingOrder = 1;
+        inGameCanvas.gameObject.name = "InGameCanvas";
+        inGameCanvas.sortingOrder = 0;
     }
 
     public T ShowPopUpUI<T>(T popUpUI) where T : PopUpUI
@@ -77,6 +78,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+
     public void ShowWindowUI(WindowUI windowUI)
     {
         WindowUI ui = GameManager.Pool.GetUI(windowUI);
@@ -99,8 +101,23 @@ public class UIManager : MonoBehaviour
         GameManager.Pool.ReleaseUI(windowUI.gameObject);
     }
 
+
     public T ShowInGameUI<T>(T inGameUI) where T : InGameUI
     {
         T ui = GameManager.Pool.GetUI(inGameUI);
+        ui.transform.SetParent(inGameCanvas.transform, false);
+
+        return ui;
+    }
+
+    public T ShowInGameUI<T>(string path) where T : InGameUI
+    {
+        T ui = GameManager.Resource.Load<T>(path);
+        return ShowInGameUI(ui);
+    }
+
+    public void CloseInGameUI<T>(T inGameUI) where T : InGameUI
+    {
+        GameManager.Pool.Release(inGameUI.gameObject);
     }
 }

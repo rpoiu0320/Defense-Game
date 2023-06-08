@@ -17,14 +17,19 @@ public class TowerPlace : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(eventData.button == PointerEventData.InputButton.Left)
-        {
-            Debug.Log("Left");
-        }
-        else if (eventData.button == PointerEventData.InputButton.Right)
-        {
-            Debug.Log("Right");
-        }
+        //if(eventData.button == PointerEventData.InputButton.Left)
+        //{
+        //    Debug.Log("Left");
+        //}
+        //else if (eventData.button == PointerEventData.InputButton.Right)
+        //{
+        //    Debug.Log("Right");
+        //}
+
+        BuildInGameUI buildUI = GameManager.UI.ShowInGameUI<BuildInGameUI>("UI/BuildInGameUI");
+        //buildUI.SetTowerPlace(this);
+        //buildUI.SetTarget(transform);
+        //buildUI.SetOffset(new Vector3(200, 0));
     }
 
     public void OnPointerEnter(PointerEventData eventData)
