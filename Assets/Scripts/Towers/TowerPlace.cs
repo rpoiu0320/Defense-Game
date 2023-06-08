@@ -45,7 +45,7 @@ public class TowerPlace : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     public void BuildTower(TowerData data)
     {
         GameManager.Resource.Destroy(gameObject);
-        GameManager.Resource.Instantiate(data./*Towers[0].*/tower, transform.position, transform.rotation);
+        GameManager.Resource.Instantiate(data.Towers[0].tower, transform.position, transform.rotation);
     }
 
     //public void OnDrag(PointerEventData eventData)
