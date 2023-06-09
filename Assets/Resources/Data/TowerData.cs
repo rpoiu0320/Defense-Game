@@ -23,14 +23,14 @@ public class TowerData : ScriptableObject//, ISerializationCallbackReceiver
     [Serializable]
     public class TowerInfo
     {
+        public Tower tower;
         public string name;
         public string description;
-
-        public Tower tower;
 
         public float buildTime;
         public float buildCost;
         public float sellCost;
+        public float range;
     }
 
     //[SerializeField]
